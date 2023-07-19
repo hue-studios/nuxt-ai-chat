@@ -1,5 +1,6 @@
 export default defineEventHandler(async (event) => {
 	const config = useRuntimeConfig();
+	console.log(config.OPENAI_API_KEY)
 	let messages = [];
 	const previosMessages = await readBody(event);
 	messages = messages.concat(previosMessages);

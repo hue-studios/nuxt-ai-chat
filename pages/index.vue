@@ -16,6 +16,7 @@
 	};
 
 	const sendPrompt = async () => {
+		console.log("trying to send...")
 		if (message.value === '') return;
 		loading.value = true;
 
@@ -26,7 +27,6 @@
 
 		scrollToEnd();
 		message.value = '';
-
 		const res = await fetch(`/api/chat`, {
 			body: JSON.stringify(messages.value.slice(1)),
 			method: 'post'
